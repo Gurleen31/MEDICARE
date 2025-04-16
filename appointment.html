@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicare - Our Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Previous styles remain the same until hero section */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #eef2f7 100%);
+            min-height: 100vh;
+        }
+
+        /* Enhanced Top Bar */
+        .top-bar {
+            background: linear-gradient(90deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 12px 0;
+            animation: slideDown 0.5s ease;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 30px;
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info span:hover {
+            transform: translateY(-2px);
+        }
+
+        .auth-buttons {
+            display: flex;
+            gap: 25px;
+        }
+
+        .auth-buttons a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 6px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .auth-buttons a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Enhanced Navigation */
+        nav {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            animation: slideDown 0.5s ease 0.2s backwards;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #2563eb, #1d4ed8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '⚕';
+            position: absolute;
+            top: -5px;
+            right: -20px;
+            font-size: 24px;
+            color: #2563eb;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            position: relative;
+            padding: 5px 0;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2.5px;
+            background: #2563eb;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: #2563eb;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .appointment-btn {
+            background: linear-gradient(45deg, #f43f5e, #e11d48);
+            color: white !important;
+            padding: 12px 28px !important;
+            border-radius: 30px;
+            transition: all 0.3s ease !important;
+            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.2);
+        }
+
+        .appointment-btn:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(244, 63, 94, 0.3);
+            background: linear-gradient(45deg, #e11d48, #be123c);
+        }
+
+        .appointment-btn::after {
+            display: none;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            min-height: calc(100vh - 135px);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+            animation: slideRight 1s ease;
+        }
+
+        .welcome-text {
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 20px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            color: #111827;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            color: #4b5563;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #2563eb, #1d4ed8);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+            background: linear-gradient(45deg, #1d4ed8, #1e40af);
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+            animation: slideLeft 1s ease;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 100%;
+            height: 100%;
+            background: #2563eb;
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        /* New Services Section Styles */
+        .services-section {
+            padding: 100px 0;
+            /* background-color #ffffff; */
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 60px;
+        }
+
+        .services-left {
+            flex: 2;
+        }
+
+        .services-right {
+            flex: 1;
+        }
+
+        .section-title {
+            font-size: 48px;
+            color: #111827;
+            margin-bottom: 60px;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .service-card {
+            display: flex;
+            gap: 25px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: #2563eb;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: #fff1f2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .service-icon i {
+            font-size: 28px;
+            color: #f43f5e;
+        }
+
+        .service-content h3 {
+            font-size: 20px;
+            color: #111827;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .service-content p {
+            color: #6b7280;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        /* Consultation Form Styles */
+        .consultation-form {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            color: #2563eb;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        textarea.form-control {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #2563eb, #1d4ed8);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .services-grid {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .services-container {
+                flex-direction: column;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 36px;
+            }
+            .services-container {
+                padding: 0 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .service-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +1 235 2355 98</span>
+                <span><i class="fas fa-envelope"></i> contact@medicare.com</span>
+            </div>
+            <div class="auth-buttons">
+                <a href="/signup">SIGN UP</a>
+                <a href="/">SIGN IN</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="logo">Medicare</a>
+            <div class="nav-links">
+                <a href="/index">Home</a>
+                <a href="/about">About</a>
+                <a href="/department">Department</a>
+                <a href="/doctor">Doctors</a>
+                <a href="/review">Reviews</a>
+                <a href="/blog">Blog</a>
+                <a href="/contact">Contact</a>
+                <a href="/appointment" class="appointment-btn"><i class="fas fa-calendar-check"></i> Appointment</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="services-container">
+            <div class="services-left">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Emergency Services</h3>
+                            <p>24/7 emergency medical services with rapid response times and experienced medical professionals.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Qualified Doctors</h3>
+                            <p>Expert healthcare professionals dedicated to providing the highest quality medical care.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Outdoors Checkup</h3>
+                            <p>Comprehensive health checkups and screenings in comfortable, convenient settings.</p>
+                        </div>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>24 Hours Service</h3>
+                            <p>Round-the-clock medical care and support for all your healthcare needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="services-right">
+                <div class="consultation-form">
+                    <h3 class="form-title">FREE CONSULTATION</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="">Select Your Services</option>
+                                <option value="emergency">Emergency Services</option>
+                                <option value="checkup">Regular Checkup</option>
+                                <option value="consultation">Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="time" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">BOOK APPOINTMENT</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

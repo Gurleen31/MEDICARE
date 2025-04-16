@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Management Login</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/bg_login2.png') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out; 
+        }
+
+        /* Add a blurred background effect */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/bg_login2.png') no-repeat center center fixed;
+            background-size: cover;
+            filter: blur(2px); 
+            z-index: -1;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+        }
+
+        .logo:hover {
+            /* color: #007bff; */
+            transform: scale(1.1) ; 
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+            padding: 50px;
+            width: 400px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transitions */
+            z-index: 1;
+            animation: slideUp 0.8s ease-in-out; /* Add slide-up effect */
+        }
+
+        .container:hover {
+            transform: scale(1.03); 
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+        }
+
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #0056b3;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder {
+            color: #999;
+            /* font-style: italic; */
+        }
+
+        input:focus {
+            border-color: #007bff;
+            background: #fff;
+            outline: none;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Glow effect */
+            transform: scale(1.02); /* Slight zoom on focus */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: #003d82;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+        .signup-link {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+        .signup-link a {
+            color: #0056b3;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">Medicare</div>
+    <div class="container">
+        <h1>Welcome Back!</h1>
+        <form class="login-form" action="/login" method="POST">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="&#128100; Enter your username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="🔒 Enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <div class="signup-link">
+            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+        </div>
+        <div class="signup-link">
+        <p><a href="/index">Back to Home →</a> </p></div>
+        <footer>© 2024 Medicare. All rights reserved.</footer>
+    </div>
+</body>
+</html>
