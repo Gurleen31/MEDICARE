@@ -24,6 +24,8 @@
             color: white;
             padding: 12px 0;
             animation: slideDown 0.5s ease;
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .top-bar-content {
@@ -138,19 +140,38 @@
             width: 100%;
         }
 
-        .appointment-btn {
-            background: linear-gradient(45deg, #f43f5e, #e11d48);
+        .emergency-btn {
+    background: linear-gradient(45deg, #dc2626, #b91c1c);
+    color: white !important;
+    padding: 12px 28px !important;
+    border-radius: 30px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.2);
+}
+
+.emergency-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+    background: linear-gradient(45deg, #b91c1c, #991b1b);
+}
+
+.emergency-btn::after {
+    display: none;
+}
+
+       .appointment-btn {
+            background: linear-gradient(45deg, #067e2a, #0fad64);
             color: white !important;
             padding: 12px 28px !important;
             border-radius: 30px;
             transition: all 0.3s ease !important;
-            box-shadow: 0 4px 15px rgba(244, 63, 94, 0.2);
+            box-shadow: 0 4px 15px rgba(37, 155, 106, 0.2);
         }
 
         .appointment-btn:hover {
             transform: translateY(-2px) !important;
-            box-shadow: 0 8px 25px rgba(244, 63, 94, 0.3);
-            background: linear-gradient(45deg, #e11d48, #be123c);
+            box-shadow: 0 8px 25px rgba(37, 155, 106, 0.3);
+            background: linear-gradient(45deg, #0fad64, #0d8d4d);
         }
 
         .appointment-btn::after {
@@ -357,33 +378,19 @@
     </style>
 </head>
 <body>
-    <!-- Top Bar -->
-    <body>
-        <div class="top-bar">
-            <div class="top-bar-content">
-                <div class="contact-info">
-                    <span><i class="fas fa-phone"></i> +91 987654321</span>
-                    <span><i class="fas fa-envelope"></i> contact@medicare.com</span>
-                </div>
-                <div class="auth-buttons">
-                    <a href="/signup"><i class="fas fa-user-plus"></i> SIGN UP</a>
-                    <a href="/"><i class="fas fa-sign-in-alt"></i> SIGN IN</a>
-                </div>
-            </div>
-        </div>
-    
-        <nav>
+<nav>
             <div class="nav-content">
                 <a href="#" class="logo">Medicare</a>
                 <div class="nav-links">
-                <a href="/index">Home</a>
+                <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/department">Department</a>
                 <a href="/doctor">Doctors</a>
                 <a href="/review">Reviews</a>
                 <a href="/blog">Blog</a>
                 <a href="/contact">Contact</a>
-                <a href="/appointment" class="appointment-btn"><i class="fas fa-calendar-check"></i> Appointment</a>
+                <a href="/signup" class="appointment-btn"><i class="fas fa-calendar-check"></i> Appointment</a>
+                <a href="/emergency" class="emergency-btn"><i class="fas fa-ambulance"></i> Emergency</a>
                 </div>
             </div>
         </nav>
@@ -399,7 +406,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="john.jpg" alt="John Smith">
+                                <img src="/images/john.jpg" alt="John Smith">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">John Smith</h3>
@@ -415,7 +422,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="2.jpg" alt="Maria Rodriguez">
+                                <img src="/images/2.jpg" alt="Maria Rodriguez">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">Maria Rodriguez</h3>
@@ -431,7 +438,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="3.jpg" alt="Sarah Thompson">
+                                <img src="/images/3.jpg" alt="Sarah Thompson">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">Sarah Thompson</h3>
@@ -447,7 +454,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="4.jpg" alt="Mike Johnson">
+                                <img src="/images/4.jpg" alt="Mike Johnson">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">Mike Johnson</h3>
@@ -463,7 +470,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="5.jpg" alt="Emma Davis">
+                                <img src="/images/5.jpg" alt="Emma Davis">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">Emma Davis</h3>
@@ -479,7 +486,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="9.jpg" alt="James Wilson">
+                                <img src="/images/9.jpg" alt="James Wilson">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">James Wilson</h3>
@@ -495,7 +502,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="6.jpg" alt="Linda Chang">
+                                <img src="/images/6.jpg" alt="Linda Chang">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">Linda Chang</h3>
@@ -511,7 +518,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="7.jpg" alt="Thomas Brown">
+                                <img src="/images/7.jpg" alt="Thomas Brown">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">Thomas Brown</h3>
@@ -527,7 +534,7 @@
                     <div class="testimonial-card">
                         <div class="testimonial-header">
                             <div class="testimonial-image">
-                                <img src="8.jpg" alt="Patricia Martinez">
+                                <img src="/images/8.jpg" alt="Patricia Martinez">
                             </div>
                             <div class="testimonial-info">
                                 <h3 class="testimonial-name">Patricia Martinez</h3>
@@ -558,7 +565,7 @@
                 <p>Leading healthcare provider focused on providing exceptional medical services with a commitment to patient care and innovative treatment solutions.</p>
                 <div class="footer-links">
                     <a href="/about"><i class="fas fa-angle-right"></i> About Us</a>
-                    <a href="/appointment"><i class="fas fa-angle-right"></i> Our Services</a>
+                    <a href="/signup"><i class="fas fa-angle-right"></i> Our Services</a>
                     <a href="#"><i class="fas fa-angle-right"></i> Privacy Policy</a>
                     <a href="#"><i class="fas fa-angle-right"></i> Terms & Conditions</a>
                 </div>
@@ -577,8 +584,8 @@
                 <h3>Quick Links</h3>
                 <div class="footer-links">
                     <a href="/doctor"><i class="fas fa-angle-right"></i> Find a Doctor</a>
-                    <a href="/appointment"><i class="fas fa-angle-right"></i> Book Appointment</a>
-                    <a href="/appointment"><i class="fas fa-angle-right"></i> Online Consultation</a>
+                    <a href="/signup"><i class="fas fa-angle-right"></i> Book Appointment</a>
+                    <a href="/signup"><i class="fas fa-angle-right"></i> Online Consultation</a>
                     <a href="#"><i class="fas fa-angle-right"></i> Medical Tourism</a>
                 </div>
             </div>
