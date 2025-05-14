@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management Login</title>
+    <title><%= title || 'Hospital Management Login' %></title>
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -15,7 +14,7 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            background: url('/bg_login2.png') no-repeat center center fixed;
+            background: url("/images/bg_login2.png") no-repeat center center fixed;
             background-size: cover;
             height: 100vh;
             display: flex;
@@ -34,7 +33,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('/bg_login2.png') no-repeat center center fixed;
+            background: url('<%= backgroundImage || "/bg_login2.png" %>') no-repeat center center fixed;
             background-size: cover;
             filter: blur(2px); 
             z-index: -1;
@@ -192,10 +191,10 @@
 </head>
 
 <body>
-    <div class="logo">Medicare</div>
+    <div class="logo"><%= brandName || 'Medicare' %></div>
     <div class="container">
-        <h1>Welcome Back!</h1>
-        <form class="login-form" action="/login" method="POST">
+        <h1><%= welcomeMessage || 'Welcome Back!' %></h1>
+        <form class="login-form" action="<%= loginEndpoint || '/' %>" method="GET">
             <div class="input-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" name="username" placeholder="&#128100; Enter your username" required>
@@ -204,14 +203,15 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="🔒 Enter your password" required>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit"><%= loginButtonText || 'Login' %></button>
         </form>
         <div class="signup-link">
-            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+            <p>Don't have an account? <a href="<%= signupUrl || '/signup' %>">Sign up</a></p>
         </div>
         <div class="signup-link">
-        <p><a href="/index">Back to Home →</a> </p></div>
-        <footer>© 2024 Medicare. All rights reserved.</footer>
+            <p><a href="<%= homeUrl || '/' %>">Back to Home →</a></p>
+        </div>
+        <footer>© <%= new Date().getFullYear() %> <%= brandName || 'Medicare' %>. All rights reserved.</footer>
     </div>
 </body>
 </html>
